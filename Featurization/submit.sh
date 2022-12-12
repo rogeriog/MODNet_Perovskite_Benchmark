@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=SOAP_perovskites
-#SBATCH --time=4:00:00
+#SBATCH --time=8:00:00
 #SBATCH --output=log.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000
