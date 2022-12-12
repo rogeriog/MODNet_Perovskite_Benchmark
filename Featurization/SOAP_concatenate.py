@@ -25,7 +25,7 @@ del SOAP_indexes ## free memory
 print(f"Total of columns necessary: {len(unique_indexes)}")
 # lets create a numpy array ordered according to the unique indexes
 SOAP_matrix=np.zeros(len(unique_indexes))
-for i in range(0, n_soapfiles):
+for i in range(31, n_soapfiles):
     filename=f"SOAP_perovsk_featurized_{i}.pkl"
     print(f"Processing {filename}...")
     SOAP_loadedfile=pickle.load(open(filename,"rb"))
