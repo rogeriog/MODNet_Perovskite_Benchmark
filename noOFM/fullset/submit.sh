@@ -1,9 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=perovsk_MODNet_BENCHfull
-#SBATCH --time=100:00:00
+#SBATCH --time=10:00:00
 #SBATCH --output=log.txt
-#SBATCH --nodes=1
-#SBATCH --mem-per-cpu=40000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=24
+#SBATCH --partition=keira
+#SBATCH --mem-per-cpu=2000
 source ~/.bashrc
 
 conda activate env_modnet
