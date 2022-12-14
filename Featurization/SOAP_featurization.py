@@ -6,7 +6,7 @@ from pymatgen.io.ase import AseAtomsAdaptor
 from ase.data import atomic_numbers
 import os
 import pandas as pd
-
+import glob
 from modnet.preprocessing import MODData
 data=MODData.load('../DATAFILES/matbench_perovskites_moddata.pkl.gz')
 structures=data.df_structure['structure']
