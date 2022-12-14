@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=AutoEncoder_OFMPerovsk
-#SBATCH --time=2-00:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --output=log.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000
