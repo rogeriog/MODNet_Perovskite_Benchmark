@@ -1,3 +1,5 @@
+*matbench_perovskites_model*
+*.pkl
 *.pkl.gz
 *best_model*
 *train_moddata*
