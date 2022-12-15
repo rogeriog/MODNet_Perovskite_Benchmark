@@ -1,1 +1,3 @@
-
+*.pkl.gz
+*best_model*
+*train_moddata*
