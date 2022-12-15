@@ -1,46 +1,39 @@
 import os, shutil 
 from modnet.preprocessing import MODData 
+def replace_line(file_name, line_num, text):
+    lines = open(file_name, 'r').readlines()
+    lines[line_num] = text
+    out = open(file_name, 'w')
+    out.writelines(lines)
+    out.close()
 
-def initialize_data():
+def initialize_data(path_full_data,dirnames):
+    for dirname in dirnames:
     ### the full set calculations files
-    shutil.copyfile('./DATAFILES/matbench_perovskites_moddata.pkl.gz', './noOFM/fullset/matbench_perovskites/precomputed/matbench_perovskites_moddata.pkl.gz')
-    shutil.copyfile('./DATAFILES/matbench_perovskites_moddataOFM.pkl.gz', 'withOFM/fullset/matbench_perovskites/precomputed/matbench_perovskites_moddataOFM.pkl.gz')
-    ### calculation on the subsets
-    for n_samples in [1000, 5000]:
-        data=MODData.load('./DATAFILES/matbench_perovskites_moddata.pkl.gz')
-        data_OFM=MODData.load('./DATAFILES/matbench_perovskites_moddataOFM.pkl.gz')
-        print(data.df_featurized)
-        print(data_OFM.df_featurized)
-        datatmp=data.df_featurized
-        datatmp['e_form']=data.df_targets
-        datatmp['structure']=data.df_structure
-        datatmp=datatmp.sample(n_samples,random_state=1)
-        print(datatmp)
-        #datatmp=datatmp.sample(5000,random_state=1)
-        datatmp_OFM=data_OFM.df_featurized
-        datatmp_OFM['e_form']=data_OFM.df_targets
-        datatmp_OFM['structure']=data_OFM.df_structure
-        datatmp_OFM=datatmp_OFM.sample(n_samples,random_state=1)
-        print(datatmp_OFM)
-        ## substitute in MODData and save
-        data.df_featurized=datatmp.drop(['e_form','structure'],axis=1)
-        data.df_targets=datatmp[['e_form']]
-        data.df_structure=datatmp[['structure']]
-        data_OFM.df_featurized=datatmp_OFM.drop(['e_form','structure'],axis=1)
-        data_OFM.df_targets=datatmp_OFM[['e_form']]
-        data_OFM.df_structure=datatmp_OFM[['structure']]
-        if n_samples == 1000:
-            data.save('noOFM/subset1k/matbench_perovskites/precomputed/matbench_perovskites_moddata1000.pkl.gz')
-            data_OFM.save('withOFM/subset1k/matbench_perovskites/precomputed/matbench_perovskites_moddataOFM1000.pkl.gz')
-        elif n_samples == 5000: 
-            data.save('noOFM/subset5k/matbench_perovskites/precomputed/matbench_perovskites_moddata5000.pkl.gz')
-            data_OFM.save('withOFM/subset5k/matbench_perovskites/precomputed/matbench_perovskites_moddataOFM5000.pkl.gz')
+        shutil.copyfile(path_full_data, './'+dirname+'/fullset/matbench_perovskites/precomputed/'+path_full_data.split('/')[-1])
+        ### calculation on the subsets
+        for n_samples in [1000, 5000]:
+            data=MODData.load(path_full_data)
+            print(data.df_featurized)
+            datatmp=data.df_featurized
+            datatmp['e_form']=data.df_targets
+            datatmp['structure']=data.df_structure
+            datatmp=datatmp.sample(n_samples,random_state=1)
+            print(datatmp)
+            ## substitute in MODData and save
+            data.df_featurized=datatmp.drop(['e_form','structure'],axis=1)
+            data.df_targets=datatmp[['e_form']]
+            data.df_structure=datatmp[['structure']]
+            if n_samples == 1000:
+                data.save(dirname+'/subset1k/matbench_perovskites/precomputed/'+path_full_data.split('/')[-1].split('.')[0]+'1000.pkl.gz')
+            elif n_samples == 5000: 
+                data.save(dirname+'/subset5k/matbench_perovskites/precomputed/'+path_full_data.split('/')[-1].split('.')[0]+'5000.pkl.gz')
 
-def initialize_dirs():
-    types=["withOFM","noOFM"]
+def initialize_dirs(dirnames):
+    # types=["MODNetCompressed"]
     subfolders=["subset1k","subset5k","fullset"]
     matbench_folders=["final_model","folds","plots","precomputed","results"]
-    for folder in types:
+    for folder in dirnames:
         try:
             os.mkdir(folder)
         except OSError:
@@ -53,6 +46,8 @@ def initialize_dirs():
                 print("Folder already created.")
                 continue
             shutil.copyfile("run_benchmark.py", folder+'/'+subfolder+"/run_benchmark.py")
+            shutil.copyfile("submit.sh", folder+'/'+subfolder+"/submit.sh")
+            replace_line(folder+'/'+subfolder+"/submit.sh",1,f'#SBATCH --job-name={folder}{subfolder}\n')
             for matbench_folder in matbench_folders:
                 try:
                     os.mkdir(folder+'/'+subfolder+'/'+'matbench_perovskites/')
@@ -64,5 +59,7 @@ def initialize_dirs():
                     print("Folder already created.")
                     continue
 if __name__ == "__main__":
-    initialize_dirs()
-    initialize_data()
+    initialize_dirs(["MODNetRemaped"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata.pkl.gz',["MODNetCompressed"])
+    #initialize_data('./Featurization/CompressMODNetFeats/matbench_perovskites_moddata_compressed244.pkl.gz',["MODNetCompressed"])
+    initialize_data('./Featurization/CompressMODNetFeats/matbench_perovskites_moddata_remap1020.pkl.gz',["MODNetRemaped"])
