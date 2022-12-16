@@ -47,6 +47,7 @@ def initialize_dirs(dirnames):
                 continue
             shutil.copyfile("run_benchmark.py", folder+'/'+subfolder+"/run_benchmark.py")
             shutil.copyfile("submit.sh", folder+'/'+subfolder+"/submit.sh")
+            shutil.copyfile("gitignore_subsets", folder+'/'+subfolder+"/.gitignore")
             replace_line(folder+'/'+subfolder+"/submit.sh",1,f'#SBATCH --job-name={folder}{subfolder}\n')
             for matbench_folder in matbench_folders:
                 try:
