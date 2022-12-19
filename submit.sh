@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=
-#SBATCH --time=10:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --output=log.txt
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=24

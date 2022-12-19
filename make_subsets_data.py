@@ -60,7 +60,23 @@ def initialize_dirs(dirnames):
                     print("Folder already created.")
                     continue
 if __name__ == "__main__":
-    initialize_dirs(["MODNetRemaped"])
+    #initialize_dirs(["MODNetRemaped"])
     #initialize_data('./DATAFILES/matbench_perovskites_moddata.pkl.gz',["MODNetCompressed"])
     #initialize_data('./Featurization/CompressMODNetFeats/matbench_perovskites_moddata_compressed244.pkl.gz',["MODNetCompressed"])
-    initialize_data('./Featurization/CompressMODNetFeats/matbench_perovskites_moddata_remap1020.pkl.gz',["MODNetRemaped"])
+    #initialize_dirs(["MODNetMMPCA"])
+    #initialize_data('./DATAFILES/PCA_MODNetData/matbench_perovskites_moddata_PCAMM.pkl.gz',["MODNetMMPCA"])
+    #initialize_dirs(["MODNet_MM_PCAOFM"])
+    #initialize_data('./DATAFILES/PCA_OFM/matbench_perovskites_moddata_OFMPCA.pkl.gz',["MODNet_MM_PCAOFM"])
+    # initialize_dirs(["MODNet_MM_OFM50encod"])
+    # initialize_data('./DATAFILES/matbench_perovskites_moddata_MMOFMencod50.pkl.gz',["MODNet_MM_OFM50encod"])
+    #initialize_dirs(["MODNet_MM_OFM16encod"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata_MMOFMencod16.pkl.gz',["MODNet_MM_OFM16encod"])
+    #initialize_dirs(["MODNet_MM088encod"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata_encoded8.8.pkl.gz',["MODNet_MM088encod"])
+    # initialize_data('./Featurization/CompressMODNetFeats/matbench_perovskites_moddata_remap1020.pkl.gz',["MODNetRemaped"])
+    #initialize_dirs(["MODNet_MM_OFMoriginal"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata_OFMoriginal.pkl.gz',["MODNet_MM_OFMoriginal"])
+    # ./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats32.pkl.gz
+    initialize_dirs(["MODNet_MM_MEGNet32"])
+    initialize_data('./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats32.pkl.gz',["MODNet_MM_MEGNet32"])
+

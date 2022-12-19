@@ -68,11 +68,19 @@ def TestEncoding(name_encoder : str = None,
         dataset : pd.DataFrame = None,
         compress_ratios : list = None,
         mode : str = 'default',
+        savedir : str = '',
+        epochs : int = 400,
         ):
+    try:
+        os.mkdir(savedir)
+    except:
+        print(f"{savedir} already created.")
     Xtoencode=dataset
     ## drop columns all 0 and register them
     columns_todrop = Xtoencode.columns[(Xtoencode == 0).all()]
-    with open("dropped_columns.txt", 'w') as f:
+    if savedir[-1] != '/':
+        savedir+='/'
+    with open(savedir+"dropped_columns.txt", 'w') as f:
         text=""
         for column in columns_todrop:
             text+=str(column)+"\n"
@@ -80,7 +88,7 @@ def TestEncoding(name_encoder : str = None,
     Xtoencode = Xtoencode.loc[:, Xtoencode.any()]
     print(f"Shape of dataset to encode: {Xtoencode.shape}"  )
     ## save the columns that are encoded
-    with open("encoded_columns.txt", 'w') as f:
+    with open(savedir+"encoded_columns.txt", 'w') as f:
         text=""
         for column in Xtoencode.columns:
             text+=str(column)+"\n"
@@ -90,73 +98,60 @@ def TestEncoding(name_encoder : str = None,
     # scale data
     t = MinMaxScaler()
     t.fit(X_train)
-    pickle.dump(t,open(f"Scaler_{name_encoder}.pkl","wb"))
+    pickle.dump(t,open(savedir+f"Scaler_{name_encoder}.pkl","wb"))
     X_train = t.transform(X_train)
     X_test = t.transform(X_test)
     # number of input columns
     n_inputs = Xtoencode.shape[1]
-    results_filename=f'EncoderResults_{name_encoder}.txt'
+    results_filename=savedir+f'EncoderResults_{name_encoder}.txt'
     if not os.path.exists(results_filename):
         with open(results_filename, 'w') as f:
             f.write(f"# Training {name_encoder} # Initial Number of Features: {n_inputs}\n")
             entries=['n_bottleneck_ratio','n_bottleneck', 'train_loss', 'val_loss', 'correlation',
                     'cosine dist', 'MAE', 'RMSE', 'R2', 'RMSE zero-vector']
-            text
+            text=''
             for i in range(len(entries)):
                 text+=f"{entries[i]:>18}|"
             text+='\n'
             f.write(text)
     for n_bottleneck_ratio in compress_ratios:
         results=[]
-        if mode == 'default':
-            # define encoder
-            visible = Input(shape=(n_inputs,))
-            e = Dense(n_inputs*2)(visible)
-            e = BatchNormalization()(e)
-            e = ReLU()(e)
-            # define bottleneck
-            n_bottleneck = int(n_inputs*n_bottleneck_ratio)
-            print(f"Compressed layer size: {n_bottleneck}")
-            bottleneck = Dense(n_bottleneck,name="bottleneck")(e)
-            # define decoder
-            d = Dense(n_inputs*2)(bottleneck)
-            d = BatchNormalization()(d)
-            d = ReLU()(d)
-            # output layer
-            output = Dense(n_inputs, activation='linear')(d)
-            # define autoencoder model
-            model = Model(inputs=visible, outputs=output)
-            # compile autoencoder model
-            model.compile(optimizer='adam', loss='mse')
-        if mode == 'doublelayer':
-            # define bottleneck
-            n_bottleneck = int(n_inputs*n_bottleneck_ratio)
-            print(f"Compressed layer size: {n_bottleneck}")
-            # define encoder
-            visible = Input(shape=(n_inputs,))
-            e = Dense(n_inputs*2)(visible)
-            e = BatchNormalization()(e)
-            e = ReLU()(e)
-            e = Dense(int((n_inputs*2+n_bottleneck)/2))(e)
-            e = BatchNormalization()(e)
-            e = ReLU()(e)
-            bottleneck = Dense(n_bottleneck,name="bottleneck")(e)
-            # define decoder
-            d = Dense(int((n_inputs*2+n_bottleneck)/2))(bottleneck)
-            d = BatchNormalization()(d)
-            d = ReLU()(d)
-            d = Dense(n_inputs*2)(d)
-            d = BatchNormalization()(d)
-            d = ReLU()(d)
-            # output layer
-            output = Dense(n_inputs, activation='linear')(d)
-            # define autoencoder model
-            model = Model(inputs=visible, outputs=output)
-            # compile autoencoder model
-            model.compile(optimizer='adam', loss='mse')
+        if mode == 'default': 
+            n_bottleneck=n_inputs*n_bottleneck_ratio
+            model = create_autoencoder(input_shape=n_inputs,
+                                       layers_structure= [n_inputs*2, int(n_bottleneck) ] ) 
+        elif mode == '2n_m2nb_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [n_inputs*2, int((n_inputs*2+n_bottleneck)/2), 
+                               int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == '2n_n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [n_inputs*2, n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == 'n_2n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [n_inputs, 2*n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == '3n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [3*n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == 'n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == '2n_3n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [2*n_inputs, 3*n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
+        elif mode == '3n_2n_b':
+            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
+            layers_structure= [3*n_inputs, 2*n_inputs, int(n_bottleneck) ]  
+            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
         # model.summary()
         # fit the autoencoder model to reconstruct input
-        history = model.fit(X_train, X_train, epochs=400, batch_size=16, verbose=2, validation_data=(X_test,X_test))
+        history = model.fit(X_train, X_train, epochs=epochs, batch_size=16, verbose=2, validation_data=(X_test,X_test))
         # plot loss
         print(f"COMPRESSED VECTOR SIZE: {n_bottleneck}")    
         pyplot.plot(history.history['loss'], label='train')
@@ -175,10 +170,10 @@ def TestEncoding(name_encoder : str = None,
             f.write(text)
             f.write('\n')
         pyplot.legend()
-        pyplot.savefig(f"{name_encoder}_{np.round(n_bottleneck_ratio,4)}.png")
+        pyplot.savefig(savedir+f"{name_encoder}_{np.round(n_bottleneck_ratio,4)}.png")
         pyplot.clf()
         # save full autoencoder model (without the decoder)
-        model.save(f'{name_encoder}_AutoEncoder_compressratio_{np.round(n_bottleneck_ratio,4)}.h5')
+        model.save(savedir+f'{name_encoder}_AutoEncoder_compressratio_{np.round(n_bottleneck_ratio,4)}.h5')
         # define and save an encoder model (without the decoder)
         encoder,decoder = get_encoder_decoder(model, "bottleneck")
         ## no need to save it loads corrupted after
@@ -198,6 +193,7 @@ def encode_dataset(dataset : pd.DataFrame = None,
         columns_to_read : str = None,
         autoencoder : str = None,
         save_name : str = None,
+        feat_prefix : str = "EncodedFeat"
                   ):
     Xtoencode=dataset
     file_encoded_columns = open(columns_to_read, 'r')
@@ -213,7 +209,67 @@ def encode_dataset(dataset : pd.DataFrame = None,
     # autoencoder.layers[0]._name='changed_input'
     encoder,decoder = get_encoder_decoder(autoencoder, "bottleneck")
     Xencoded=encoder.predict(Xtoencode)
+    Xencoded=pd.DataFrame(Xencoded, columns=[f"{feat_prefix}|{idx}" for idx in range(Xencoded.shape[1])],
+                          index=dataset.index)
     pickle.dump(Xencoded, open(save_name,'wb'))
+    print(Xencoded)
     print('Final shape:', Xencoded.shape)
     print('Summary of results:', get_results_model(autoencoder,Xtoencode))
     return Xencoded
+
+def create_autoencoder(input_shape : int = None,layers_structure : list = None ):
+
+    # Define the number of layers and number of neurons in each layer
+    neurons_per_layer = layers_structure # [64, 32, 16, 8]
+    num_layers = len(neurons_per_layer)
+    n_inputs=input_shape
+    # The input layer is the same as the output layer
+    input_layer = Input(shape=(n_inputs,))
+
+    # Create the encoder layers
+    # encoder_layers = []
+    for i in range(num_layers-1):
+        if i == 0:
+            e = Dense(neurons_per_layer[i])(input_layer)
+            e = BatchNormalization()(e)
+            e = ReLU()(e)
+            # encoder_layers.append(Dense(neurons_per_layer[i], activation='relu')(BatchNormalization()(input_layer)))
+        else:
+            e = Dense(neurons_per_layer[i])(e)
+            e = BatchNormalization()(e)
+            e = ReLU()(e)
+            # encoder_layers.append(Dense(neurons_per_layer[i], activation='relu')(BatchNormalization()(encoder_layers[i-1])))
+            # encoder_layers.append(BatchNormalization()(Dense(neurons_per_layer[i], activation='relu')(encoder_layers[i-1])))
+
+    # Create the decoder layers
+    # decoder_layers = []
+    for i in range(num_layers-1, -1, -1):   
+        if i == num_layers-1:
+            d = Dense(neurons_per_layer[i], name='bottleneck')(e)
+            d = BatchNormalization()(d)
+            d = ReLU()(d)
+            #decoder_layers.append(Dense(neurons_per_layer[i], name='bottleneck', activation='relu')(BatchNormalization()(encoder_layers[i-1])))
+            #decoder_layers.append(Dense(neurons_per_layer[i], name='bottleneck', activation='relu')(encoder_layers[i-1]))
+        else:
+            d = Dense(neurons_per_layer[i])(d)
+            d = BatchNormalization()(d)
+            d = ReLU()(d)
+
+
+            #decoder_layers.append(Dense(neurons_per_layer[i], activation='relu')(BatchNormalization()(decoder_layers[-1])))
+
+            #visible = Input(shape=(n_inputs,))
+            #e = Dense(n_inputs*2)(visible)
+            #e = BatchNormalization()(e)
+            #e = ReLU()(e)
+    # The output layer is the same as the input layer
+    # output_layer = Dense(n_inputs, activation='linear')(decoder_layers[-1])
+    output_layer = Dense(n_inputs, activation='linear')(d)
+
+    # Create the autoencoder model
+    autoencoder = Model(inputs=input_layer, outputs=output_layer)
+
+    # Compile the model
+    autoencoder.compile( optimizer='adam', loss = 'mse')
+    autoencoder.summary()
+    return autoencoder
