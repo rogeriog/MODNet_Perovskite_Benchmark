@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=MEGNet16
 #SBATCH --time=1-00:00:00
-#SBATCH --output=log.txt
+#SBATCH --output=log_megnetfeats.txt
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=12
 #SBATCH --partition=keira
@@ -13,6 +13,6 @@ conda activate env_modnetmod
 echo "start"
 date
 nproc=12 # $(nproc --all)
-python3 get_megnetfeats16.py >> log.txt
+python3 -u get_megnetfeats16.py >> log_megnetfeats.txt
 echo "done"
 date

@@ -1,0 +1,16 @@
+start
+Mon Dec 19 12:32:32 CET 2022
+2022-12-19 12:33:34,412 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f5a32fd08e0> object, created with modnet version 0.1.12
+2022-12-19 12:33:37.673357: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-19 12:33:39.622397: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Folder ./DATAFILES/MEGNetFeats16/ already created.
+Processing slice 15 out of 20
+Traceback (most recent call last):
+  File "get_megnetfeats16.py", line 8, in <module>
+    sliced_featurization(structures, get_MEGNetFeaturesDF, prefix_df='MEGNetFeats16', 
+  File "/auto/globalscratch/users/r/g/rgouvea/MODNet_Perovskite_Benchmark/ProcessFeatureDatasets.py", line 135, in sliced_featurization
+    feat_df=featurizer(structures[slices[idx]:slices[idx+1]],**kwargs)
+TypeError: get_MEGNetFeaturesDF() got an unexpected keyword argument 'continue_from_index'
+done
+Mon Dec 19 12:34:12 CET 2022
