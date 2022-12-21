@@ -131,6 +131,7 @@ def sliced_featurization(structures, featurizer, prefix_df='featurized', slice_s
     for idx in range(len(slices)-1):
         if kwargs.get('continue_from_index',False) and idx < kwargs.get('continue_from_index',0):
            continue
+        kwargs.pop('continue_from_index',0)
         print(f"Processing slice {idx+1} out of {len(slices)}")
         feat_df=featurizer(structures[slices[idx]:slices[idx+1]],**kwargs)
         pickle.dump(feat_df,open(savedir+prefix_df+f"_slice{idx}.pkl", "wb"))

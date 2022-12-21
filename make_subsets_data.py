@@ -77,6 +77,14 @@ if __name__ == "__main__":
     #initialize_dirs(["MODNet_MM_OFMoriginal"])
     #initialize_data('./DATAFILES/matbench_perovskites_moddata_OFMoriginal.pkl.gz',["MODNet_MM_OFMoriginal"])
     # ./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats32.pkl.gz
-    initialize_dirs(["MODNet_MM_MEGNet32"])
-    initialize_data('./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats32.pkl.gz',["MODNet_MM_MEGNet32"])
-
+    #initialize_dirs(["MODNet_MM_MEGNet32"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats32.pkl.gz',["MODNet_MM_MEGNet32"])
+    # ./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats16.pkl.gz
+    #initialize_dirs(["MODNet_MM_MEGNet16"])
+    #initialize_data('./DATAFILES/matbench_perovskites_moddata_MM_MEGNetFeats16.pkl.gz',["MODNet_MM_MEGNet16"])
+    #matbench_perovskites_moddata_MM80_OFM50.pkl.gz
+    #matbench_perovskites_moddata_MM80_OFM50_MEGNet32.pkl.gz
+    initialize_dirs(["MODNet_MM80_OFM50"])
+    initialize_data('./DATAFILES/matbench_perovskites_moddata_MM80_OFM50.pkl.gz',["MODNet_MM80_OFM50"])
+    initialize_dirs(["MODNet_MM80_OFM50_MEGNet32"])
+    initialize_data('./DATAFILES/matbench_perovskites_moddata_MM80_OFM50_MEGNet32.pkl.gz',["MODNet_MM80_OFM50_MEGNet32"])

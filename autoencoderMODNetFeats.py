@@ -6,6 +6,24 @@ import os, sys
 from Featurization.CompressionFunctions import TestEncoding
 def main():
     from modnet.preprocessing import MODData
+    data=MODData.load('../matbench_mp_gap_light_featurized.pkl')
+    Xtoencode=data.df_featurized.fillna(-1)
+    print(Xtoencode)
+    TestEncoding( name_encoder = 'MPGap_MODNet_2n_n_b',
+                       dataset = Xtoencode,
+               compress_ratios = np.arange(1,0,-0.05),
+               savedir='./DATAFILES/CompressMODNet_2n_n_b_MPGap',
+               # epochs=20, 
+               mode='2n_n_b',
+               )
+    TestEncoding( name_encoder = 'MPGap_MODNet_n_2n_b',
+                       dataset = Xtoencode,
+               compress_ratios = np.arange(1,0,-0.05),
+               savedir='./DATAFILES/CompressMODNet_n_2n_b_MPGap',               
+               mode='n_2n_b',
+               )
+def main_perovskites():
+    from modnet.preprocessing import MODData
     data=MODData.load('./DATAFILES/matbench_perovskites_moddata.pkl.gz')
     Xtoencode=data.df_featurized
     print(Xtoencode)
@@ -22,15 +40,5 @@ def main():
                # epochs=20, 
                mode='n_2n_b',
                )
-"""
-        elif mode == '3n_b':
-            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
-            layers_structure= [3*n_inputs, int(n_bottleneck) ]
-            model = create_autoencoder(input_shape=n_inputs, layers_structure=layers_structure)
-        elif mode == 'n_b':
-            n_bottleneck=int(n_inputs*n_bottleneck_ratio)
-            layers_structure= [n_inputs, int(n_bottleneck) ]
-            model = create_autoencoder(input_shape=n_input
-"""
 if __name__ == '__main__':
     main()

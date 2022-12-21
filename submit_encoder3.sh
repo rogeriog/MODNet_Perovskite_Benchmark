@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=AutoEncoder3_MODNetPerovsk
-#SBATCH --time=1-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --output=log3.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000

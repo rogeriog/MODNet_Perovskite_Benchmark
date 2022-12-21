@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=AutoEncoder_MODNetPerovsk
-#SBATCH --time=1-00:00:00
-#SBATCH --output=log.txt
+#SBATCH --job-name=AutoEncoder0_MODNetMPGap
+#SBATCH --time=2-00:00:00
+#SBATCH --output=log0.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000
 #SBATCH --partition=gpu
@@ -18,7 +18,7 @@ export XLA_FLAGS="--xla_gpu_cuda_data_dir=/home/ucl/modl/rgouvea/anaconda3/envs/
 conda activate env_modnetmod
 echo "start"
 date
-python3 -u autoencoderMODNetFeats.py >> log.txt
+python3 -u autoencoderMODNetFeats0.py >> log0.txt
 date
 echo "done"
 

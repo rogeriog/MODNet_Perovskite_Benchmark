@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=AutoEncoder2_MODNetPerovsk
-#SBATCH --time=1-00:00:00
+#SBATCH --job-name=AutoEncoder2_MODNetMP_Gap
+#SBATCH --time=2-00:00:00
 #SBATCH --output=log2.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000
