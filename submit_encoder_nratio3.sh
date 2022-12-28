@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name=AutoEncoder_nratio3_MODNetMPGap
+#SBATCH --time=3-00:00:00
+#SBATCH --output=log_nratio3.txt
+#SBATCH --nodes=1
+#SBATCH --mem-per-cpu=40000
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+## #SBATCH --nodelist=mb-rom[101,102,103,104]
+source ~/.bashrc
+module load CUDA cuDNN/8.0.4.30-CUDA-11.1.1 
+# TensorFlow/2.5.0-fosscuda-2020b
+#export XLA_FLAGS="--xla_gpu_cuda_data_dir=/home/ucl/modl/rgouvea/anaconda3/envs/env_megnetgpu/lib/"
+CUDA_DIR=/home/ucl/modl/rgouvea/anaconda3/envs/env_modnetmod/lib/
+export XLA_FLAGS="--xla_gpu_cuda_data_dir=/home/ucl/modl/rgouvea/anaconda3/envs/env_modnetmod/lib/" 
+# /home/ucl/modl/rgouvea/xla/nvvm/libdevice"
+
+conda activate env_modnet
+echo "start"
+date
+#python3 -u autoencoderMODNetFeats0.py >> log0.txt
+python3 -u autoencoder_MP_Gap_Feats_nratio3.py >> log_nratio3.txt
+date
+echo "done"
+

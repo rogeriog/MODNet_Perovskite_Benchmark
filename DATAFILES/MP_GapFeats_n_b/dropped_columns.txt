@@ -1,0 +1,72 @@
+ElementFraction|He
+ElementFraction|Ne
+ElementFraction|Ar
+ElementFraction|Kr
+ElementFraction|Xe
+ElementFraction|Po
+ElementFraction|At
+ElementFraction|Rn
+ElementFraction|Fr
+ElementFraction|Ra
+ElementFraction|Am
+ElementFraction|Cm
+ElementFraction|Bk
+ElementFraction|Cf
+ElementFraction|Es
+ElementFraction|Fm
+ElementFraction|Md
+ElementFraction|No
+ElementFraction|Lr
+RadialDistributionFunction|radial distribution function|d_0.00
+RadialDistributionFunction|radial distribution function|d_0.10
+RadialDistributionFunction|radial distribution function|d_0.20
+RadialDistributionFunction|radial distribution function|d_0.30
+RadialDistributionFunction|radial distribution function|d_0.40
+RadialDistributionFunction|radial distribution function|d_0.50
+RadialDistributionFunction|radial distribution function|d_0.60
+ChemEnvSiteFingerprint|mean PP:10
+ChemEnvSiteFingerprint|std_dev PP:10
+ChemEnvSiteFingerprint|mean PA:10
+ChemEnvSiteFingerprint|std_dev PA:10
+ChemEnvSiteFingerprint|mean SBSA:10
+ChemEnvSiteFingerprint|std_dev SBSA:10
+ChemEnvSiteFingerprint|mean MI:10
+ChemEnvSiteFingerprint|std_dev MI:10
+ChemEnvSiteFingerprint|mean S:10
+ChemEnvSiteFingerprint|std_dev S:10
+ChemEnvSiteFingerprint|mean H:10
+ChemEnvSiteFingerprint|std_dev H:10
+ChemEnvSiteFingerprint|mean BS_1:10
+ChemEnvSiteFingerprint|std_dev BS_1:10
+ChemEnvSiteFingerprint|mean BS_2:10
+ChemEnvSiteFingerprint|std_dev BS_2:10
+ChemEnvSiteFingerprint|mean TBSA:10
+ChemEnvSiteFingerprint|std_dev TBSA:10
+ChemEnvSiteFingerprint|mean PCPA:11
+ChemEnvSiteFingerprint|std_dev PCPA:11
+ChemEnvSiteFingerprint|mean H:11
+ChemEnvSiteFingerprint|std_dev H:11
+ChemEnvSiteFingerprint|mean SH:11
+ChemEnvSiteFingerprint|std_dev SH:11
+ChemEnvSiteFingerprint|mean CO:11
+ChemEnvSiteFingerprint|std_dev CO:11
+ChemEnvSiteFingerprint|mean DI:11
+ChemEnvSiteFingerprint|std_dev DI:11
+ChemEnvSiteFingerprint|mean I:12
+ChemEnvSiteFingerprint|std_dev I:12
+ChemEnvSiteFingerprint|mean PBP:12
+ChemEnvSiteFingerprint|std_dev PBP:12
+ChemEnvSiteFingerprint|mean TT:12
+ChemEnvSiteFingerprint|std_dev TT:12
+ChemEnvSiteFingerprint|mean C:12
+ChemEnvSiteFingerprint|std_dev C:12
+ChemEnvSiteFingerprint|mean AC:12
+ChemEnvSiteFingerprint|std_dev AC:12
+ChemEnvSiteFingerprint|mean SC:12
+ChemEnvSiteFingerprint|std_dev SC:12
+ChemEnvSiteFingerprint|mean S:12
+ChemEnvSiteFingerprint|std_dev S:12
+ChemEnvSiteFingerprint|mean HP:12
+ChemEnvSiteFingerprint|std_dev HP:12
+ChemEnvSiteFingerprint|mean HA:12
+ChemEnvSiteFingerprint|std_dev HA:12

@@ -18,7 +18,8 @@ export XLA_FLAGS="--xla_gpu_cuda_data_dir=/home/ucl/modl/rgouvea/anaconda3/envs/
 conda activate env_modnetmod
 echo "start"
 date
-python3 -u autoencoderMODNetFeats0.py >> log0.txt
+#python3 -u autoencoderMODNetFeats0.py >> log0.txt
+python3 -u autoencoder_MP_Gap_Feats.py >> log0.txt
 date
 echo "done"
 

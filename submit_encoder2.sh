@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=AutoEncoder2_MODNetMP_Gap
-#SBATCH --time=2-00:00:00
+#SBATCH --job-name=AutoEncoder2_MODNetMPGap
+#SBATCH --time=3-00:00:00
 #SBATCH --output=log2.txt
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=40000
@@ -15,10 +15,11 @@ CUDA_DIR=/home/ucl/modl/rgouvea/anaconda3/envs/env_modnetmod/lib/
 export XLA_FLAGS="--xla_gpu_cuda_data_dir=/home/ucl/modl/rgouvea/anaconda3/envs/env_modnetmod/lib/" 
 # /home/ucl/modl/rgouvea/xla/nvvm/libdevice"
 
-conda activate env_modnetmod
+conda activate env_modnet
 echo "start"
 date
-python3 -u autoencoderMODNetFeats2.py >> log2.txt
+#python3 -u autoencoderMODNetFeats0.py >> log0.txt
+python3 -u autoencoder_MP_Gap_Feats2.py >> log2.txt
 date
 echo "done"
 

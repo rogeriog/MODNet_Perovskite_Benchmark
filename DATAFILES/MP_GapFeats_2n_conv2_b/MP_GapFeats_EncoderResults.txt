@@ -1,0 +1,3 @@
+# Training MP_GapFeats # Initial Number of Features: 1264
+      architecture|           loss_fn|        batch_size|            epochs|     learning_rate|n_bottleneck_ratio|      n_bottleneck|        train_loss|          val_loss|       correlation|       cosine dist|               MAE|              RMSE|                R2|  RMSE zero-vector|
+        2n_conv2_b                mse                 16                100             0.0005                0.5                632          0.0004671         0.00064106         0.00620035         0.00511273         0.01193798         0.02531922         0.95841287         0.23411467 
