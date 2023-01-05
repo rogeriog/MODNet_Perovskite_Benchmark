@@ -18,7 +18,7 @@ def main():
         bottleneck_ratios = [0.5], 
         batch_sizes = [16,32,64],
         epochs_list = [100,200,300],
-        loss_functions = ['mse','log_cosh'],
+        loss_functions = ['mse'],
         learning_rates = [0.0005, 0.001, 0.002],
         architectures = ['3n_b'], 
         savedir = './DATAFILES/',

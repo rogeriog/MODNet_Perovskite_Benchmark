@@ -15,13 +15,13 @@ from keras.models import load_model
 import pandas as pd
 matplotlib.use('Agg')
 import tensorflow as tf
-from typing import List
+from typing import List,Union
 import numbers
 # Set the random seed in TensorFlow
 tf.random.set_seed(42)
 def get_encoder_decoder(model, central_layer_name):
     layer = model.get_layer(central_layer_name)
-    encoder_input = Input(model.input_shape[1:])
+    encoder_input = Input(model.input_shape[1:], name='input_input') # to avoid same name error
     #encoder_input = Input(shape=model.input_shape[1:])
     encoder_output = encoder_input
     decoder_input = Input(layer.output_shape[1:])
@@ -289,23 +289,24 @@ def TestEncoding(prefix_name : str = 'Model',
         f.write(text)
         f.write('\n')
 
-def encode_dataset(dataset : pd.DataFrame = None,
-        scaler : str = None,
-        columns_to_read : str = None,
-        autoencoder : str = None,
-        save_name : str = None,
-        feat_prefix : str = "EncodedFeat"
+def filter_features_dataset(dataset : Union[pd.DataFrame,MODData] = None,
+        allowed_features_file : str = None,
+        mode : str = 'default',
                   ):
-    Xtoencode=dataset
-    file_encoded_columns = open(columns_to_read, 'r')
+    if mode == "default":
+        Xtofilter=dataset
+    elif mode == "MODData":
+        Xtofilter=dataset.df_featurized
+
+    file_encoded_columns = open(allowed_features_file, 'r')
     lines = file_encoded_columns.readlines()
     columns_encoded=[line.strip('\n') for line in lines]
     ## Xtoencode needs to have all encoded columns in the scaler and autoencoder
     ## if not it will throw error. Please get the missing features.
     ## But columns that are in X but not in columns_encoded are discarded.
-    
-    Xtoencode=Xtoencode[[c for c in Xtoencode.columns if c in columns_encoded]]
-    Xset=set(Xtoencode.columns)
+   
+    Xtofilter=Xtofilter[[c for c in Xtofilter.columns if c in columns_encoded]]
+    Xset=set(Xtofilter.columns)
     colset=set(columns_encoded)
     colmissing=list(colset-Xset)
     print(f"All feats missing: {colmissing}")
@@ -317,11 +318,34 @@ def encode_dataset(dataset : pd.DataFrame = None,
             ## in this case the features were calculated but there are specific
             ## properties missing, we will include those and fill with 0s for the encoder.
             for missing in colmissing:
-                Xtoencode[missing] = 0
+                Xtofilter[missing] = 0
         else:
             raise ValueError("Compute the aforementioned features before proceeding!")
     ## reorganizing columns in encoded columns
-    Xtoencode = Xtoencode.reindex(columns_encoded, axis=1)
+    Xtofilter = Xtofilter.reindex(columns_encoded, axis=1)
+
+    if mode == "default":
+        return Xtofilter
+    elif mode == "MODData":
+        dataset.df_featurized = Xtofilter
+        return dataset
+
+def encode_dataset(dataset : Union[pd.DataFrame,MODData] = None,
+        scaler : str = None,
+        columns_to_read : str = None,
+        autoencoder : str = None,
+        save_name : str = None,
+        feat_prefix : str = "EncodedFeat",
+        mode : str = "default",
+                  ):
+    if mode == "default":
+        Xtoencode=dataset
+        indexes=dataset.index
+    elif mode == "MODData":
+        Xtoencode=dataset.df_featurized
+        indexes = dataset.df_featurized.index
+    ## filtering features to encode dataset
+    Xtoencode = filter_features_dataset(dataset=Xtoencode,allowed_features_file=columns_to_read)
     ## scaler data
     t=pickle.load(open(scaler,"rb"))
     Xtoencode = t.transform(Xtoencode)
@@ -332,9 +356,14 @@ def encode_dataset(dataset : pd.DataFrame = None,
     # autoencoder.layers[0]._name='changed_input'
     encoder,decoder = get_encoder_decoder(autoencoder, "bottleneck")
     Xencoded=encoder.predict(Xtoencode)
+    
     Xencoded=pd.DataFrame(Xencoded, columns=[f"{feat_prefix}|{idx}" for idx in range(Xencoded.shape[1])],
-                          index=dataset.index)
-    pickle.dump(Xencoded, open(save_name,'wb'))
+                          index=indexes)
+    if mode == "default":
+        pickle.dump(Xencoded, open(save_name,'wb'))
+    elif mode == "MODData":
+        dataset.df_featurized=Xencoded
+        dataset.save(save_name)
     print(Xencoded)
     print('Final shape:', Xencoded.shape)
     print('Summary of results:', get_results_model(autoencoder,Xtoencode))

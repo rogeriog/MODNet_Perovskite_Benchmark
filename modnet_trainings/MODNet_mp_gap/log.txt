@@ -1,0 +1,209 @@
+start
+Mon Jan  2 18:30:49 CET 2023
+2023-01-02 18:30:50.461397: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Running on 24 jobs
+Preparing nested CV run for task 'matbench_mp_gap'
+2023-01-02 18:31:35,961 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f2a1d1b8d60> object, created with modnet version 0.1.12
+2023-01-02 18:33:07,010 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f2a109b9070> object, created with modnet version 0.1.12
+2023-01-02 18:33:50,111 - modnet - INFO - Data successfully saved as folds/train_moddata_f1!
+2023-01-02 18:35:16,750 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f29e0000310> object, created with modnet version 0.1.12
+2023-01-02 18:35:47,839 - modnet - INFO - Data successfully saved as folds/train_moddata_f2!
+2023-01-02 18:37:37,377 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f2940000100> object, created with modnet version 0.1.12
+2023-01-02 18:38:10,598 - modnet - INFO - Data successfully saved as folds/train_moddata_f3!
+2023-01-02 18:40:12,228 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f2880000c70> object, created with modnet version 0.1.12
+2023-01-02 18:40:40,033 - modnet - INFO - Data successfully saved as folds/train_moddata_f4!
+2023-01-02 18:42:12,895 - modnet - INFO - Loaded <modnet.preprocessing.MODData object at 0x7f2880000400> object, created with modnet version 0.1.12
+2023-01-02 18:42:42,057 - modnet - INFO - Data successfully saved as folds/train_moddata_f5!
+2023-01-02 18:42:42.076897: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:06,360 - modnet - INFO - Targets:
+2023-01-02 18:43:06,360 - modnet - INFO - 1)gap_pbe_target: regression
+2023-01-02 18:43:09.248615: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:09.414593: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:09.578715: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:09.953949: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:10.274646: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:10.657228: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:11.250148: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:11.513650: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:11.964029: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:12.616088: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:12.846756: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:13.276157: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:13.582566: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:13.867117: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:14.557162: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:14.912353: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:15.445528: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:16.021854: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:16,286 - modnet - INFO - Multiprocessing on 24 cores. Total of 256 cores available.
+2023-01-02 18:43:16,286 - modnet - INFO - Generation number 0
+2023-01-02 18:43:16.847193: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:19.488564: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:20.753334: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:21.039134: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:21.400868: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:21.553231: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+  0%|          | 0/100 [00:00<?, ?it/s]2023-01-02 18:43:30.408475: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:34.208818: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:37.223101: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:40.865665: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:44.766123: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:48.098848: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:51.884915: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:55.795073: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:43:59.644932: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:03.919257: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:08.153410: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:12.539725: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:17.170491: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:21.949648: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:27.146762: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 3s31/32 [============================>.] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+  1%|          | 1/100 [01:05<1:48:19, 65.65s/it]2023-01-02 18:44:32.433407: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:37.691907: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+  2%|▏         | 2/100 [01:14<52:40, 32.25s/it]  2023-01-02 18:44:42.897392: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-02 18:44:48.483585: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 4s30/32 [===========================>..] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 3s 1/32 [..............................] - ETA: 3s27/32 [========================>.....] - ETA: 0s19/32 [================>.............] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+32/32 [==============================] - 0s 3ms/step
+  3%|▎         | 3/100 [01:26<37:05, 22.94s/it]2023-01-02 18:44:53.660117: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 3s32/32 [==============================] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+  4%|▍         | 4/100 [01:29<24:26, 15.27s/it]  5%|▌         | 5/100 [01:30<15:54, 10.05s/it]2023-01-02 18:44:59.426820: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 3s31/32 [============================>.] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+2023-01-02 18:45:04.628478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+  7%|▋         | 7/100 [01:41<11:47,  7.61s/it]2023-01-02 18:45:09.843534: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 820us/step
+  8%|▊         | 8/100 [01:46<10:45,  7.01s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+2023-01-02 18:45:14.804243: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+  9%|▉         | 9/100 [01:51<09:47,  6.46s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 740us/step
+ 11%|█         | 11/100 [01:56<06:59,  4.72s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 735us/step
+ 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 672us/step
+ 13%|█▎        | 13/100 [02:01<05:37,  3.88s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 987us/step
+ 15%|█▌        | 15/100 [02:11<06:03,  4.27s/it] 1/32 [..............................] - ETA: 2s17/32 [==============>...............] - ETA: 0s32/32 [==============================] - 0s 3ms/step
+ 16%|█▌        | 16/100 [02:52<16:28, 11.77s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 2ms/step
+ 17%|█▋        | 17/100 [03:06<16:51, 12.19s/it] 1/32 [..............................] - ETA: 2s16/32 [==============>...............] - ETA: 0s32/32 [==============================] - 0s 3ms/step
+ 18%|█▊        | 18/100 [03:13<15:02, 11.01s/it] 1/32 [..............................] - ETA: 5s17/32 [==============>...............] - ETA: 0s32/32 [==============================] - 0s 3ms/step
+ 19%|█▉        | 19/100 [03:20<13:12,  9.78s/it] 1/32 [..............................] - ETA: 2s20/32 [=================>............] - ETA: 0s32/32 [==============================] - 0s 3ms/step
+ 1/32 [..............................] - ETA: 3s31/32 [============================>.] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 20%|██        | 20/100 [03:21<10:09,  7.62s/it] 1/32 [..............................] - ETA: 2s26/32 [=======================>......] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 2ms/step
+ 21%|██        | 21/100 [03:25<08:29,  6.45s/it] 1/32 [..............................] - ETA: 4s24/32 [=====================>........] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 22%|██▏       | 22/100 [03:25<06:15,  4.81s/it] 23%|██▎       | 23/100 [03:26<04:31,  3.52s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 24%|██▍       | 24/100 [03:27<03:38,  2.87s/it] 25%|██▌       | 25/100 [03:31<03:48,  3.04s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 3s30/32 [===========================>..] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 26%|██▌       | 26/100 [03:36<04:29,  3.64s/it] 1/32 [..............................] - ETA: 3s30/32 [===========================>..] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 3s25/32 [======================>.......] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 28%|██▊       | 28/100 [03:40<03:41,  3.07s/it] 29%|██▉       | 29/100 [03:41<02:47,  2.35s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+ 30%|███       | 30/100 [03:45<03:23,  2.91s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 31%|███       | 31/100 [03:47<02:56,  2.55s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 32%|███▏      | 32/100 [03:50<03:04,  2.72s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 807us/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 33%|███▎      | 33/100 [03:51<02:39,  2.38s/it] 34%|███▍      | 34/100 [03:54<02:47,  2.53s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 755us/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 642us/step
+ 35%|███▌      | 35/100 [03:58<03:13,  2.98s/it] 36%|███▌      | 36/100 [04:00<02:41,  2.52s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 2ms/step
+ 37%|███▋      | 37/100 [04:03<02:46,  2.64s/it] 38%|███▊      | 38/100 [04:03<02:05,  2.03s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 840us/step
+ 1/32 [..............................] - ETA: 2s29/32 [==========================>...] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 2s27/32 [========================>.....] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 39%|███▉      | 39/100 [04:07<02:32,  2.50s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 640us/step
+ 42%|████▏     | 42/100 [04:15<02:27,  2.54s/it] 1/32 [..............................] - ETA: 2s 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 825us/step
+30/32 [===========================>..] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 678us/step
+ 43%|████▎     | 43/100 [04:19<02:44,  2.88s/it] 44%|████▍     | 44/100 [04:19<02:05,  2.24s/it] 45%|████▌     | 45/100 [04:20<01:49,  1.99s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 988us/step
+ 46%|████▌     | 46/100 [04:23<01:56,  2.17s/it] 1/32 [..............................] - ETA: 1s28/32 [=========================>....] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 47%|████▋     | 47/100 [04:30<03:12,  3.64s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 800us/step
+ 48%|████▊     | 48/100 [04:42<05:09,  5.96s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 764us/step
+ 49%|████▉     | 49/100 [04:56<06:55,  8.14s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 50%|█████     | 50/100 [05:04<06:45,  8.12s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 872us/step
+ 51%|█████     | 51/100 [05:08<05:42,  7.00s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 960us/step
+ 52%|█████▏    | 52/100 [05:12<04:51,  6.08s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 918us/step
+ 53%|█████▎    | 53/100 [05:17<04:34,  5.83s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 912us/step
+ 55%|█████▌    | 55/100 [05:18<02:32,  3.39s/it] 56%|█████▌    | 56/100 [05:21<02:22,  3.25s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 57%|█████▋    | 57/100 [05:42<05:42,  7.97s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 832us/step
+ 58%|█████▊    | 58/100 [05:50<05:33,  7.94s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 899us/step
+ 59%|█████▉    | 59/100 [05:55<04:53,  7.15s/it] 60%|██████    | 60/100 [05:57<03:36,  5.42s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 61%|██████    | 61/100 [06:00<03:04,  4.73s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 62%|██████▏   | 62/100 [06:17<05:21,  8.45s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 953us/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 898us/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 788us/step
+ 63%|██████▎   | 63/100 [06:26<05:14,  8.49s/it] 64%|██████▍   | 64/100 [06:26<03:37,  6.04s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 65%|██████▌   | 65/100 [06:29<03:01,  5.19s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 954us/step
+ 66%|██████▌   | 66/100 [06:30<02:10,  3.84s/it] 67%|██████▋   | 67/100 [06:30<01:32,  2.81s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 978us/step
+ 68%|██████▊   | 68/100 [06:34<01:38,  3.08s/it] 69%|██████▉   | 69/100 [06:35<01:13,  2.38s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 70%|███████   | 70/100 [06:38<01:21,  2.71s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 2s 71%|███████   | 71/100 [06:47<02:13,  4.59s/it]32/32 [==============================] - 0s 1ms/step
+ 72%|███████▏  | 72/100 [06:47<01:33,  3.32s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 860us/step
+ 73%|███████▎  | 73/100 [06:51<01:33,  3.47s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 74%|███████▍  | 74/100 [07:38<07:11, 16.61s/it] 1/32 [..............................] - ETA: 2s25/32 [======================>.......] - ETA: 0s32/32 [==============================] - 0s 2ms/step
+ 75%|███████▌  | 75/100 [08:03<07:55, 19.04s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 656us/step
+ 76%|███████▌  | 76/100 [08:06<05:37, 14.04s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 2ms/step
+ 77%|███████▋  | 77/100 [08:11<04:22, 11.42s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 810us/step
+ 78%|███████▊  | 78/100 [08:15<03:22,  9.22s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 703us/step
+ 79%|███████▉  | 79/100 [08:27<03:34, 10.20s/it] 1/32 [..............................] - ETA: 3s32/32 [==============================] - 0s 1ms/step
+ 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 80%|████████  | 80/100 [08:33<02:56,  8.81s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 82%|████████▏ | 82/100 [08:39<01:51,  6.20s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 980us/step
+ 83%|████████▎ | 83/100 [08:42<01:31,  5.38s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 950us/step
+ 84%|████████▍ | 84/100 [08:43<01:04,  4.05s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 1ms/step
+ 85%|████████▌ | 85/100 [08:43<00:45,  3.03s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 919us/step
+ 86%|████████▌ | 86/100 [08:46<00:43,  3.07s/it] 1/32 [..............................] - ETA: 2s32/32 [==============================] - 0s 667us/step
+ 87%|████████▋ | 87/100 [08:50<00:43,  3.37s/it] 1/32 [..............................] - ETA: 1s32/32 [==============================] - 0s 1ms/step
+ 88%|████████▊ | 88/100 [08:58<00:57,  4.77s/it]slurmstepd: error: *** JOB 35412126 ON mb-rom203 CANCELLED AT 2023-01-03T10:19:42 ***
+slurmstepd: error: Detected 12 oom-kill event(s) in StepId=35412126.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
